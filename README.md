@@ -21,5 +21,5 @@ I've tried it with node 8.9.4 and 9.11.1, and webpack 4.8.3 and 4.6.0.
 ```
 $ yarn install
 $ yarn works // runs webpack in dev mode
-$ yarn buggy // runs webpack in dev mode
+$ yarn buggy // runs webpack in prod mode
 ```
