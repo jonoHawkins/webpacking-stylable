@@ -1,4 +1,14 @@
-I'd love to use stylable but I've been having trouble with creating webpack production builds 😞. This repo is me trying to work out how to do it. Here's an overview:
+I was having trouble getting Stylable to work with production webpack builds but the lovely people over there help me get it working 😍. You can see the thread [here](https://github.com/wix/stylable/issues/325).
+
+## Getting Started
+
+```
+$ yarn install
+$ yarn dev // runs webpack in dev mode
+$ yarn prod // runs webpack in prod mode
+```
+
+## What the problem was...
 
 - There is an entry that imports a .st.css file and a second module that itself imports a .st.css file.
 - Bundling works with webpack in development mode.
@@ -14,12 +24,21 @@ bootstrap:19 Uncaught TypeError: Cannot read property 'call' of undefined
 ```
 - If you remove the .st.css import from the second module everything is happy again.
 
-I've tried it with node 8.9.4 and 9.11.1, and webpack 4.8.3 and 4.6.0.
+## The fix (for now)
 
-## Getting Started
+Set your webpack stylable plugin config to:
 
-```
-$ yarn install
-$ yarn works // runs webpack in dev mode
-$ yarn buggy // runs webpack in prod mode
+```js
+new StylableWebpackPlugin({
+    "outputCSS": false,
+    "includeCSSInJS": true,
+    "createRuntimeChunk": true,
+    "optimize": {
+        "removeUnusedComponents": true,
+        "removeComments": true,
+        "removeStylableDirectives": true,
+        "classNameOptimizations": true,
+        "shortNamespaces": true
+    }
+})
 ```
