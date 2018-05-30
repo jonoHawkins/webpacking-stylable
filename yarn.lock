@@ -4369,12 +4369,18 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-stylable-webpack-plugin@^1.0.18:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/stylable-webpack-plugin/-/stylable-webpack-plugin-1.0.18.tgz#63d812dabffa133668534e4eeb3fc7b36dac83b0"
+stylable-runtime@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stylable-runtime/-/stylable-runtime-1.0.0.tgz#9c18321d1bd96d3f440e33174da46562ea2689d9"
+
+stylable-webpack-plugin@1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/stylable-webpack-plugin/-/stylable-webpack-plugin-1.0.19.tgz#5c9b8f75bba2dd749c701b668f3a87513f267707"
   dependencies:
     css-selector-tokenizer "^0.7.0"
     find-config "^1.0.0"
+    lodash.clonedeep "^4.5.0"
+    stylable-runtime "^1.0.0"
     url-regex "^4.1.1"
     webpack-sources "^1.1.0"
 

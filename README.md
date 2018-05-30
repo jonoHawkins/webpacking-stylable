@@ -24,9 +24,9 @@ bootstrap:19 Uncaught TypeError: Cannot read property 'call' of undefined
 ```
 - If you remove the .st.css import from the second module everything is happy again.
 
-## The fix (for now)
+## The fix
 
-Set your webpack stylable plugin config to:
+Use `stylable-webpack-plugin@1.0.19` for zero config. This basically (at time of writing) has the following config for production webpack builds:
 
 ```js
 new StylableWebpackPlugin({
